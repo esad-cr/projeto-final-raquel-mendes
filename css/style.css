@@ -93,3 +93,12 @@ iframe, video {
 *** O CÓDIGO COMEÇA DEPOIS DESTE COMENTÁRIO ***
 ***************************************************
 ***************************************************/
+
+#headerLogo img {
+    width: 120px;
+    height: auto;
+}
+
+body {
+    background-color: #004947;
+}
