@@ -94,11 +94,42 @@ iframe, video {
 ***************************************************
 ***************************************************/
 
+body {
+    background-color: #004947;
+    color: #e8e8e8;
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+h1, h2, h3 {
+    font-family: 'Unbounded', sans-serif;
+}
+
+#topHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 60px;
+    border-bottom: 0.5px solid #ffc0fe;
+}
+
 #headerLogo img {
-    width: 120px;
+    width: 80px;
     height: auto;
 }
 
-body {
-    background-color: #004947;
+#mainMenu ul {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+}
+
+#mainMenu ul li a {
+    color: #e8e8e8;
+    text-decoration: none;
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+
+#mainMenu ul li a:hover {
+    color: #1d9e75;
 }
