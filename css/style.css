@@ -1,92 +1,85 @@
-    /*! NOTE: These are just recommended default global styles, edit as required */
+/*! NOTE: These are just recommended default global styles, edit as required */
 
-    ::selection { /* Optional */
-    /* It can be really hard to read highlighted text with a text-shadow, it should be removed when selected */
+::selection { /* Optional */
+  /* It can be really hard to read highlighted text with a text-shadow, it should be removed when selected */
   text-shadow: none;
   
-    /* NOTE: Using this means the color and background-color are set to
-transparent for selected text... */
-    /* So you can customise your styles below */
-    color: #fff;
-    background-color: #00f;
+  /* NOTE: Using this means the color and background-color are set to transparent for selected text... */
+  /* So you can customise your styles below */
+  color: #fff;
+  background-color: #00f;
 }
 
 html {
-    /* Make base font-size 100% of browser font-size */
-    font-size: 100%;
+  /* Make base font-size 100% of browser font-size */
+  font-size: 100%;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-    html {
-        scroll-behavior: smooth; /* Smoothly animate to different sections
-within a page, only if the user doesn't mind animations */
-    }
+  html {
+    scroll-behavior: smooth; /* Smoothly animate to different sections within a page, only if the user doesn't mind animations */
+  }
 }
 
 *,
 *::before,
 *::after,
 html {
-    /* Declare your box-sizing here
-    /* https://css-tricks.com/box-sizing */
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    /* outras opções - content-box */
+  /* Declare your box-sizing here
+  /* https://css-tricks.com/box-sizing */
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  /* outras opções - content-box */
 }
 
 body {
-    /* Declare your default font stack here */
-    font-family: "Font Stack", sans-serif, serif, monospace, cursive,
-fantasy;
-    /* outras opções - serif, monospace, cursive, fantasy */
+  /* Declare your default font stack here */
+  font-family: "Font Stack", sans-serif, serif, monospace, cursive, fantasy;
+  /* outras opções - serif, monospace, cursive, fantasy */
 
-    /* Better text rendering - font-smoothing has not been officially
-declared, but can still be useful */
-    text-rendering: geometricPrecision;
-    /* outras opções -optimizeLegibility | optimizeSpeed */
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  /* Better text rendering - font-smoothing has not been officially declared, but can still be useful */
+  text-rendering: geometricPrecision;
+  /* outras opções -optimizeLegibility | optimizeSpeed */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #004947; /* cor de fundo do site */
 }
 
 img {
-/* For responsive images that adjust & adapt */
-height: auto;
-max-width: 100%;
-
-/* This isn't needed, but as a user, I get frustrated when I
-highlight text and the image gets highlighted too */
-user-select: none;
+  /* For responsive images that adjust & adapt */
+  height: auto;
+  max-width: 100%;
+  
+  /* This isn't needed, but as a user, I get frustrated when I highlight text and the image gets highlighted too */
+  user-select: none;
 }
 
 button {
-    color: inherit; /* By default, buttons don't inherit the font
-colour, this is a useful default to override */
+  color: inherit; /* By default, buttons don't inherit the font colour, this is a useful default to override */
 }
 
 a, button {
-    touch-action: manipulation; /* Element doesn't want double-tap on
-mobile to zoom */
+  touch-action: manipulation; /* Element doesn't want double-tap on mobile to zoom */
 }
 
 svg {
-    /* Make the SVGs fit the parent container by default */
-    height: 100%;
-    width: 100%;
-
-    /* Optional - make the SVG's fill be the same as the inherited color
-*/
-    fill: currentColor;
-
-    /* Prevent the SVG from altering cursor interaction */
-    pointer-events: none;
+  /* Make the SVGs fit the parent container by default */
+  height: 100%;
+  width: 100%;
+  
+  /* Optional - make the SVG's fill be the same as the inherited color */
+  fill: currentColor;
+  
+  /* Prevent the SVG from altering cursor interaction */
+  pointer-events: none;
 }
 
 iframe, video {
-    /* Make iframes & videos fit the parent container by default */
-    height: 100%;
-    width: 100%
-}
+  /* Make iframes & videos fit the parent container by default */
+  height: 100%;
+  width: 100%
+} 
 
 /**************************************************
 ***************************************************
@@ -94,255 +87,172 @@ iframe, video {
 ***************************************************
 ***************************************************/
 
-/*! NOTA: Estes são apenas estilos globais recomendados, edita conforme necessário */
+:root {
+    --header-height:3.5rem;
 
-::selection { /* Opcional */
-    /* É muito difícil ler texto destacado com sombra de texto, deve ser removida quando selecionado */
-    text-shadow: none;
-    
-    /* NOTA: Usar isto significa que a cor e a cor de fundo ficam transparentes para o texto selecionado */
-    /* Podes personalizar os estilos abaixo */
-    color: #fff;
-    background-color: #00f;
+/*==================== COLORS ====================*/
+    --nav-menu-background-color: #006060;
+    --nav-menu-text-color: #ffc0fe;
+    --body-background-color: #ffc0fe;
+    --body-text-color: #006060;
+    --primary-color: #ff0077;
+    --secondary-color: #0ba9a9;
+
+/*==================== FONT WEIGHT ====================*/
+    --font-regular: 400;
+    --font-semi-bold:600;
+    --font-bold: 800;
+
+/*==================== Z INDEX ====================*/ 
+    --z-tooltip: 10;
+    --z-fixed: 100;
 }
 
-html {
-    /* Define o tamanho base da fonte para 100% da fonte do navegador */
-    font-size: 100%;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-    html {
-        scroll-behavior: smooth; /* Animação suave ao navegar entre secções */
-    }
-}
-
-*,
-*::before,
-*::after,
-html {
-    /* Define o modelo de caixa para todos os elementos */
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
+/********************* Estilos Base *********************/
 
 body {
-    /* Define a fonte principal do corpo do texto */
-    font-family: 'Nunito Sans', sans-serif; /* fonte principal do corpo do texto */
-    /* Melhor renderização do texto */
-    text-rendering: geometricPrecision;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    background-color: #004947; /* cor de fundo do site */
-    color: #e8e8e8; /* cor do texto principal */
+    font-size: 16px;
+    font-family: "Nunito Sans", sans-serif;
+    /*background-color: var(--body-background-color);*/
 }
 
-img {
-    /* Imagens responsivas que se ajustam ao contentor */
-    height: auto;
-    max-width: 100%;
-    /* Impede que a imagem seja selecionada pelo utilizador */
-    user-select: none;
-}
-
-button {
-    /* Os botões herdam a cor do elemento pai por defeito */
-    color: inherit;
-}
-
-a, button {
-    /* Evita o zoom duplo no toque em dispositivos móveis */
-    touch-action: manipulation;
-}
-
-svg {
-    /* O SVG ocupa todo o contentor pai */
-    height: 100%;
-    width: 100%;
-    /* O preenchimento do SVG herda a cor do elemento pai */
-    fill: currentColor;
-    /* Impede que o SVG interfira com a interação do cursor */
-    pointer-events: none;
-}
-
-iframe, video {
-    /* Iframes e vídeos ocupam todo o contentor pai */
-    height: 100%;
-    width: 100%;
-}
 
 /**************************************************
-***************************************************
-*** O CÓDIGO COMEÇA DEPOIS DESTE COMENTÁRIO ***
-***************************************************
-***************************************************/
+************** LARGURA DOS ELEMENTOS **************
+*************** QUE COMPÕEM O BODY ****************
+**************************************************/
 
-/*! NOTA: Estes são apenas estilos globais recomendados, edita conforme necessário */
-
-::selection { /* Opcional */
-    /* É muito difícil ler texto destacado com sombra de texto, deve ser removida quando selecionado */
-    text-shadow: none;
-    
-    /* NOTA: Usar isto significa que a cor e a cor de fundo ficam transparentes para o texto selecionado */
-    /* Podes personalizar os estilos abaixo */
-    color: #fff;
-    background-color: #00f;
-}
-
-html {
-    /* Define o tamanho base da fonte para 100% da fonte do navegador */
-    font-size: 100%;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-    html {
-        scroll-behavior: smooth; /* Animação suave ao navegar entre secções */
-    }
-}
-
-*,
-*::before,
-*::after,
-html {
-    /* Define o modelo de caixa para todos os elementos */
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
-
-body {
-    /* Define a fonte principal do corpo do texto */
-    font-family: 'Nunito Sans', sans-serif; /* fonte principal do corpo do texto */
-    /* Melhor renderização do texto */
-    text-rendering: geometricPrecision;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    background-color: #004947; /* cor de fundo do site */
-    color: #e8e8e8; /* cor do texto principal */
-}
-
-img {
-    /* Imagens responsivas que se ajustam ao contentor */
-    height: auto;
-    max-width: 100%;
-    /* Impede que a imagem seja selecionada pelo utilizador */
-    user-select: none;
-}
-
-button {
-    /* Os botões herdam a cor do elemento pai por defeito */
-    color: inherit;
-}
-
-a, button {
-    /* Evita o zoom duplo no toque em dispositivos móveis */
-    touch-action: manipulation;
-}
-
-svg {
-    /* O SVG ocupa todo o contentor pai */
-    height: 100%;
+/* utilizando tags */
+body header, body main, body footer {
     width: 100%;
-    /* O preenchimento do SVG herda a cor do elemento pai */
-    fill: currentColor;
-    /* Impede que o SVG interfira com a interação do cursor */
-    pointer-events: none;
+    max-width: 1680px;
+    margin: 0 auto;
+    padding: 0 16px;
 }
 
-iframe, video {
-    /* Iframes e vídeos ocupam todo o contentor pai */
-    height: 100%;
+/* utilizando id */
+#topHeader, #mainContent, #mainFooter {
     width: 100%;
+    max-width: 1680px;
+    margin: 0 auto;
+    padding: 0 16px;
 }
 
-/**************************************************
-***************************************************
-*** O CÓDIGO COMEÇA DEPOIS DESTE COMENTÁRIO ***
-***************************************************
-***************************************************/
+/* utilizando classes */
+.pageWidth {
+    width: 100%;
+    max-width: 1680px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
 
-/* Títulos usam a fonte geométrica Unbounded */
+/*=============== TIPOGRAFIA PARA MOBILE ===============*/ 
+
 h1, h2, h3 {
-    font-family: 'Unbounded', sans-serif;
+    font-family: Unbounded, sans-serif;
 }
 
-/* Cabeçalho principal do site */
+h1 {
+    font-size: 2.986em;
+    font-weight: 900;
+    letter-spacing: 0.22rem;
+    line-height: 1.5;
+}
+
+h2 {
+    font-size: 2.488em;
+    font-weight: 700;
+    letter-spacing: 0.22rem;
+    line-height: 1.15;
+}
+
+h3 {
+    font-size: 2.074em;
+    font-weight: 500;
+    letter-spacing: 0.22rem;
+    line-height: 1;
+}
+
+p {
+    font-size: 16px;
+}
+
+small {
+    font-size: 13.33px;
+
+}
+
+strong {
+    font-weight: var(--font-semi-bold);
+}
+
+ul {
+    list-style: none;
+
+}
+
+a {
+    text-decoration: none;
+    color: var(--nav-menu-text-color);
+}
+
+a:hover, a:active, a.active {
+    color: var(--primary-color);
+}
+
+/*=============== TIPOGRAFIA PARA DESKTOP ===============*/ 
+
+@media (min-width: 992px) {
+    h1{
+        font-size: 7.993rem;
+    }
+
+    h2{
+        font-size: 5.653rem;
+    }
+
+    h3{
+        font-size: 3.998rem;
+    }
+}
+
+/**************************************************
+**************** MENU DE NAVGEAÇÃO ****************
+**************************************************/
+
 #topHeader {
-    display: flex; /* alinha o logo e o menu em linha */
-    align-items: center; /* centra verticalmente os elementos */
-    justify-content: space-between; /* logo à esquerda, menu à direita */
-    padding: 20px 60px; /* espaço interior */
-    border-bottom: 0.5px solid #ffc0fe; /* linha separadora rosa */
+    position: fixed; /*menu fixo no scroll*/
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-width: 100%;
+    background-color: var(--nav-menu-background-color);
+    box-shadow: 0 2px 16px hsla(220, 32%, 8%, .3);
+    z-index: var(--z-fixed);
 }
 
-/* Tamanho do logo */
-#headerLogo img {
-    width: 80px;
-    height: auto; /* mantém as proporções originais */
+#mainMenu {
+    height: var(--header-height);
+    width: 100%;
+    max-width: 1680px;
+    margin: 0 auto;
+    padding: 0 16px;
 }
 
-/* Menu de navegação em linha */
-#mainMenu ul {
-    display: flex; /* coloca os itens do menu em linha */
-    gap: 32px; /* espaço entre os itens do menu */
-    list-style: none; /* remove os pontos da lista */
+.nav__Burger,
+.nav__Close {
+    color: var(--nav-menu-text-color)
 }
 
-/* Links do menu de navegação */
-#mainMenu ul li a {
-    color: #e8e8e8; /* cor do texto dos links */
-    text-decoration: none; /* remove o sublinhado dos links */
-    font-size: 20px; /* tamanho do texto */
-    letter-spacing: 1px; /* espaçamento entre letras */
+.navAction {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-/* Efeito ao passar o rato nos links do menu */
-#mainMenu ul li a:hover {
-    color: #1d9e75; /* cor verde ao passar o rato */
-}
-
-/* Secção hero - ocupa o ecrã todo menos o header */
-#heroSection {
-    background-color: #ffc0fe; /* cor de fundo rosa */
-    height: calc(100vh - 85px); /* desconta a altura do header para não dar scroll */
-    display: flex; /* alinha os elementos em flexbox */
-    align-items: center; /* centra o título verticalmente */
-    justify-content: flex-start; /* alinha o título à esquerda */
-    position: relative; /* necessário para posicionar a estrela */
-    overflow: hidden; /* esconde o que sair fora da secção */
-    padding: 0 60px; /* espaço interior nos lados */
-    box-sizing: border-box; /* garante que o padding não aumenta a altura */
-}
-
-/* Bloco do título - empilha as duas palavras */
-#heroTitle {
-    font-family: 'Unbounded', sans-serif; /* fonte geométrica dos títulos */
-    font-size: clamp(60px, 10vw, 140px); /* tamanho fluido consoante o tamanho do ecrã */
-    color: #006060; /* cor do texto */
-    text-transform: uppercase; /* texto em maiúsculas */
-    font-weight: 900; /* espessura máxima */
-    letter-spacing: -4px; /* aproxima as letras entre si */
-    line-height: 0.9; /* altura de linha compacta */
-    display: flex; /* permite empilhar as linhas */
-    flex-direction: column; /* coloca Portfolio e Criativo em linhas separadas */
-    align-items: flex-start; /* alinha o texto à esquerda */
-    position: relative; /* necessário para posicionar a estrela em relação ao título */
-}
-
-/* Estrela decorativa posicionada entre as duas palavras */
-#heroStar {
-    position: absolute; /* posiciona em relação ao título */
-    left: 92%; /* alinha por baixo do último O de Portfolio */
-    top: 50%; /* posiciona entre as duas linhas de texto */
-    transform: translateY(-50%); /* centra verticalmente na linha de separação */
-    color: #006060; /* mesma cor do texto */
-    font-size: 1em; /* mesmo tamanho que as letras */
-    font-family: sans-serif; /* fonte simples para o símbolo */
-    line-height: 1; /* evita herdar o line-height compacto do título */
-}
-
-/* Estrela decorativa grande - escondida por agora, para quando tiveres a imagem */
-#heroDot {
-    display: none;
+#headerLogo {
+    display: inline-flex;
+    align-items: center;
+    column-gap: .25rem;
 }
