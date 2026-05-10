@@ -319,3 +319,52 @@ a:hover, a:active, a.active {
     transition: background-color .3s;
 }
 
+
+/* Navigation for large devices */
+
+@media screen and (min-width: 992px) {
+  #topHeader {
+    margin-inline: auto;
+  }
+
+    #mainMenu {
+    height: calc(var(--header-height) + 2rem);
+    display: flex;
+    justify-content: space-between;
+  }
+  .nav__toggle {
+    display: none;
+  }
+  .nav__list {
+    height: 100%;
+    display: flex;
+    column-gap: 3rem;
+  }
+  .nav__link {
+    height: 100%;
+    padding: 0;
+    justify-content: initial;
+    column-gap: .25rem;
+    background-color: transparent;
+    color: var(--primary-color);
+  }
+  .nav__link:hover {
+    background-color: transparent;
+    color: var(--secondary-color);
+  }
+
+}
+
+/****************************************
+************* mainContent ***************
+****************************************/
+
+#mainContent {
+  margin-top:var(--header-height)!important;
+}
+
+@media screen and (min-width: 992px) {
+  #mainContent {
+    margin-top: calc(var(--header-height)+2rem)
+  }
+}
