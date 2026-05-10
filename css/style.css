@@ -78,24 +78,27 @@ iframe, video {
   /* Make iframes & videos fit the parent container by default */
   height: 100%;
   width: 100%
-} 
+}
+
 
 /**************************************************
 ***************************************************
-*** O CÓDIGO COMEÇA DEPOIS DESTE COMENTÁRIO ***
+************ O MEU CÓDIGO COMEÇA AQUI! ************
 ***************************************************
 ***************************************************/
 
+/*==================== CSS VARIABLES ====================*/
 :root {
     --header-height:3.5rem;
 
 /*==================== COLORS ====================*/
-    --nav-menu-background-color: #006060;
-    --nav-menu-text-color: #ffc0fe;
-    --body-background-color: #ffc0fe;
-    --body-text-color: #006060;
-    --primary-color: #ffc0fe;
-    --secondary-color: #0ecbcb;
+    --nav-menu-background-color: #151515;
+    --nav-menu-text-color: #e6e6e6;
+    --nav-menu-text-color-active: #fc90d8;
+    --body-background-color: #0f0f0f;
+    --body-text-color: #e6e6e6;
+    --primary-color: #ffffff;
+    --secondary-color: #fc90d8;
 
 /*==================== FONT WEIGHT ====================*/
     --font-regular: 400;
@@ -111,10 +114,51 @@ iframe, video {
 
 body {
     font-size: 16px;
-    font-family: "Nunito Sans", sans-serif;
+    font-family: "DM Sans", sans-serif;
     background-color: var(--body-background-color);
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: Unbounded, sans-serif;
+}
+
+p {
+  font-size: 16px;
+}
+
+small {
+  font-size: 0.8rem;
+}
+
+strong {
+  font-weight: var(--font-semi-bold);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--secondary-color);
+}
+
+a:hover, a:active, a.active {
+  color: var(--primary-color);  
+}
+/**** espaçar elementos ****/
+.space-S{
+  height: 30px;
+}
+.space-M{
+  height: 60px;
+}
+.space-L{
+  height: 90px;
+}
+.space-XL{
+  height: 120px;
+}
 
 /**************************************************
 ************** LARGURA DOS ELEMENTOS **************
@@ -145,80 +189,77 @@ body header, body main, body footer {
     padding: 0 16px;
 }
 
-/*=============== TIPOGRAFIA PARA MOBILE ===============*/ 
+/*********************************************
+********** TIPOGRAFIA PARA MOBILE ************
+*********************************************/
 
-h1, h2, h3 {
-    font-family: Unbounded, sans-serif;
+h1, .h1{
+  font-size: 2.986rem;
+  font-weight: 700;
+  letter-spacing: 0.22rem;
+  line-height: 1.5;
 }
 
-h1 {
-    font-size: 2.986em;
-    font-weight: 900;
-    letter-spacing: 0.22rem;
-    line-height: 1.5;
+h2, .h2{
+  font-size: 2.488rem;
+  font-weight: 700;
+  line-height: 1.15;
 }
 
-h2 {
-    font-size: 2.488em;
-    font-weight: 700;
-    letter-spacing: 0.22rem;
-    line-height: 1.15;
+h3, .h3{
+  font-size: 2.074rem;
+  font-weight: 500;
+  line-height: 1;
 }
 
-h3 {
-    font-size: 2.074em;
-    font-weight: 500;
-    letter-spacing: 0.22rem;
-    line-height: 1;
+h4, .h4{
+  font-size: 1.728rem;
 }
 
-p {
-    font-size: 16px;
+h5, .h5{
+  font-size: 1.44rem;
 }
 
-small {
-    font-size: 13.33px;
-
+h6, .h6{
+  font-size: 1.2rem;
 }
 
-strong {
-    font-weight: var(--font-semi-bold);
-}
 
-ul {
-    list-style: none;
-
-}
-
-a {
-    text-decoration: none;
-    color: var(--nav-menu-text-color);
-}
-
-a:hover, a:active, a.active {
-    color: var(--primary-color);
-}
-
-/*=============== TIPOGRAFIA PARA DESKTOP ===============*/ 
+/*********************************************
+********** TIPOGRAFIA PARA DESKTOP ***********
+*********************************************/ 
 
 @media (min-width: 992px) {
-    h1{
-        font-size: 7.993rem;
-    }
+  h1, .h1{
+    font-size: 7.993rem;
+  }
 
-    h2{
-        font-size: 5.653rem;
-    }
+  h2, .h2{
+    font-size: 5.653rem;
+  }
 
-    h3{
-        font-size: 3.998rem;
-    }
+  h3, .h3{
+    font-size: 3.998rem;
+  }
+
+  h4, .h4{
+    font-size: 2.2827rem;
+  }
+
+  h5, .h5{
+    font-size: 1.9999rem;
+  }
+
+  h6, .h6{
+    font-size: 1.414rem;
+  }
 }
 
 /**************************************************
 **************** MENU DE NAVGEAÇÃO ****************
 **************************************************/
 
+/*=============== HEADER ===============*/
 #topHeader {
     position: fixed; /*menu fixo no scroll*/
     top: 0;
@@ -238,9 +279,9 @@ a:hover, a:active, a.active {
     padding: 0 16px;
 }
 
-.nav__Burger,
-.nav__Close {
-    color: var(--nav-menu-text-color);
+.nav__burger,
+.nav__close {
+    color: var(--primary-color);
 }
 
 .navAction {
@@ -279,7 +320,7 @@ a:hover, a:active, a.active {
     height: max-content;
     inset: 0;
     margin: auto;
-    font-size: 2rem;
+    font-size: 1.5rem;
     cursor: pointer;
     transition: opacity .1s, transform .4s;
 
@@ -289,7 +330,9 @@ a:hover, a:active, a.active {
     opacity: 0;
 }
 
-/* Navigation for mobile devices */
+
+/*=============== NAVEGATION FOR MOBILE DEVICES ===============*/
+
 @media screen and (max-width: 992px) {
     .nav__menu {
         position: absolute;
@@ -298,36 +341,61 @@ a:hover, a:active, a.active {
         width: 100%;
         height: calc(100vh - 3.5rem);
         overflow: auto;
-        /*pointer-events: none;
-        opacity: 0;*/
+        pointer-events: none;
+        opacity: 0;
         transition: top .4s, opacity .3s;
     }
     .nav__menu::-webkit-scrollbar {
-        background-color: var(--nav-menu-background-color);
-        padding-top: 1rem;
+    width: 0;
+    }
+    .nav__list {
+      padding-top: 1rem;
     }
 }
 
-.nav__link {
-    color: var(--secondary-color);
-    background-color: var(--nav-menu-background-color);
-    font-weight: var(--font-semi-bold);
-    padding: 1.5rem 1.5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: background-color .3s;
-}
+    .nav__link {
+        color: var(--secondary-color);
+        background-color: var(--nav-menu-background-color);
+        font-weight: var(--font-semi-bold);
+        padding: 1.25rem 1.5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: color .3s;
+    }
+
+    .nav__link:hover {
+     color: var(--primary-color);
+    }
+
+    /* Show menu */
+    .show-menu {
+        opacity: 1;
+        top: 3.5rem;
+        pointer-events: initial;
+    }
+
+    /* Show icon */
+    .show-icon .nav__burger {
+        opacity: 0;
+        transform: rotate(90deg);
+    }
+
+    .show-icon .nav__close {
+        opacity: 1;
+        transform: rotate(90deg);
+    }
 
 
-/* Navigation for large devices */
+
+/*=============== NAVEGATION FOR LARGE DEVICES ===============*/
 
 @media screen and (min-width: 992px) {
   #topHeader {
     margin-inline: auto;
   }
 
-    #mainMenu {
+  #mainMenu {
     height: calc(var(--header-height) + 2rem);
     display: flex;
     justify-content: space-between;
@@ -346,14 +414,12 @@ a:hover, a:active, a.active {
     justify-content: initial;
     column-gap: .25rem;
     background-color: transparent;
-    color: var(--primary-color);
   }
   .nav__link:hover {
     background-color: transparent;
-    color: var(--secondary-color);
   }
-
 }
+
 
 /****************************************
 ************* mainContent ***************
@@ -365,6 +431,14 @@ a:hover, a:active, a.active {
 
 @media screen and (min-width: 992px) {
   #mainContent {
-    margin-top: calc(var(--header-height)+2rem)
+    margin-top:calc(var(--header-height)+2rem)
   }
+}
+/****************************************
+************* mainFooter ***************
+****************************************/
+
+#mainFooter {
+  padding: 20px;
+  text-align: center;
 }
